@@ -1,14 +1,11 @@
 <?php
 ini_set('session.gc_maxlifetime', '14400');
 ini_set('session.cookie_lifetime', '14400');
-//ini_set('session.gc_maxlifetime', '0');
-//ini_set('session.cookie_lifetime', '0');
 
 error_reporting(E_ALL & ~E_NOTICE);
 ini_set('display_errors', true);
 ini_set('display_startup_errors', true);
 
-//exit;
 clearstatcache();
 session_start();
 define('_CONTROL', 1);

@@ -9,14 +9,11 @@ class PagesInclud
     protected static $_instance;
     public static $page;
     public static $id;
-    //public static $exit = "/view/body/exit.php";
-    //public static $login = "login.php";
     protected $main = 'main';
 
     const MYPAGE = [
         'redact' => 'redact',
-        'redact2' => 'redact2',
-        'redact3' => 'redact3',
+        'blog' => 'blog',
     ];
     const MYLOGIN = [
         'login' => 'login',
@@ -27,16 +24,23 @@ class PagesInclud
     {
         if (!empty($_REQUEST['page'])) {
             self::$page = trim(html_entity_decode(strip_tags(preg_replace('/[^a-z]/Uuis', '', $_REQUEST['page']))));
-            if ($_SESSION["name"]) {
-                if ((!array_key_exists(self::$page, self::MYPAGE)) || (!array_key_exists(self::$page, self::MYLOGIN))) {
+
+
+            if ($_SESSION["user_name"]) {
+                if (array_key_exists(self::$page, self::MYPAGE) || array_key_exists(self::$page, self::MYLOGIN)) {
+                    return;
+                } else {
                     self::$page = $this->main;
+                    return;
                 }
             } else {
                 if (!array_key_exists(self::$page, self::MYLOGIN)) {
                     self::$page = $this->main;;
+                    return;
+
                 }
             }
-        } elseif (!empty($_REQUEST['id'])) {
+        } /*elseif (!empty($_REQUEST['id'])) {
             self::$id = intval(trim(filter_var($_REQUEST['id'], FILTER_VALIDATE_INT)));
             if (self::$id > 0) {
                 self::$page = 'blog';
@@ -44,9 +48,9 @@ class PagesInclud
                 self::$id = 0;
                 self::$page = $this->main;
             }
-        } else {
+        }*/
+        else {
             self::$page = $this->main;
-
         }
     }
 
@@ -60,7 +64,6 @@ class PagesInclud
 
     public function getInc()
     {
-        self::getInstance();
         if (!empty(self::$page)) {
             $file = "view/body/" . self::$page . ".php";
         }

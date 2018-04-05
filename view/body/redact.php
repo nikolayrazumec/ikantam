@@ -2,5 +2,5 @@
 //include_once 'lib/Status.classes.php';
 //use MyClasses\Status as Status;
 //$status = Status::getInstance();
-var_dump('redact.php')
+var_dump('redacthead.php')
 ?>

@@ -5,3 +5,4 @@
  * Date: 03.04.2018
  * Time: 21:34
  */
+var_dump('bloghead.php');

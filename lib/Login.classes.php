@@ -78,6 +78,12 @@ class Login
             $_SESSION["user_name"] = $user['name'];
             $_SESSION["id_user"] = $user['id'];
             $_SESSION["admin"] = $user['admin'];
+            if ($user['admin'] == 1) {
+                $_SESSION['status'] = 'writer';
+            } else {
+                $_SESSION['status'] = 'user';
+            }
+
             die('window.location.href = "/"');
         }
         die('window.location.href = "/"');
@@ -97,6 +103,11 @@ class Login
             $_SESSION["user_name"] = $user['name'];
             $_SESSION["id_user"] = $user['id'];
             $_SESSION["admin"] = $user['admin'];
+            if ($user['admin'] == 1) {
+                $_SESSION['status'] = 'writer';
+            } else {
+                $_SESSION['status'] = 'user';
+            }
             die('window.location.href = "/"');
         } else {
             die("alert('maximum number of characters for field 50')");
