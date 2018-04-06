@@ -1,7 +1,6 @@
 <?php
 define('_CONTROL', 1);
 session_start();
-//include_once "../lib/Blog.classes.php";
 include_once "/lib/Blog.classes.php";
 
 use MyClasses\Blog as Blog;
@@ -30,7 +29,7 @@ echo '
             </div>
 
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                <p>' . $one_record['text'] . '</p>
+                <p style="word-wrap: break-word;">' . $one_record['text'] . '</p>
                 <p>Posted on ' . $one_record['time'] . ' by <b>' . $one_record['name'] . '</b></p>';
 
 if ((intval($_SESSION['id_user']) === intval($one_record['id_user'])) || $_SESSION['status'] === 'writer') {

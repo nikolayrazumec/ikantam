@@ -35,3 +35,4 @@ include_once "/control/exist.php";
 </div>
 
 <script src="assets/js/add.js"></script>
+<script src="assets/js/add_and_redact.js"></script>

@@ -1,8 +1,6 @@
 <?php
 defined('_CONTROL') or die;
-//include_once "/control/exist.php";
 ?>
-
 
 <div class="container">
     <div class="row">

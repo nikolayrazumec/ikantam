@@ -1,0 +1,1 @@
+var adresspost='model/redact_add.php';

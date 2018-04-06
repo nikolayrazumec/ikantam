@@ -8,15 +8,23 @@ include_once 'MyDb.classes.php';
 class Blog
 {
     protected $pdo;
-    //private $max;
     protected $limi2 = 4;
 
     public function __construct()
     {
         $this->pdo = MyDb::MyPdo();
-        //$this->max = $this->getMax();
     }
 
+    public function setUpdate(int $id, string $title, string $text, $img)
+    {
+        if (!empty($img)) {
+            $stmt = $this->pdo->prepare('UPDATE `user_blog` SET `title`=?,`text`=?,`img`=? WHERE `id`=?');
+            return $stmt->execute([$title, $text, $img, $id]);
+        } else {
+            $stmt = $this->pdo->prepare('UPDATE `user_blog` SET `title`=?,`text`=? WHERE `id`=?');
+            return $stmt->execute([$title, $text, $id]);
+        }
+    }
 
     public function setInsert(int $id_user, string $title, string $text, string $img)
     {
@@ -42,7 +50,7 @@ class Blog
     public function getRecord(int $limi1 = 0)
     {
         $limi1 = intval($limi1);
-        $sql = "SELECT blog.id,`id_user`, `title`, SUBSTR(`text`, 1, 300) as text, `time`, `img`, name FROM `user_blog` as blog
+        $sql = "SELECT blog.id,`id_user`, `title`, SUBSTR(`text`, 1, 150) as text, `time`, `img`, name FROM `user_blog` as blog
 JOIN `user` as user ON user.id=blog.id_user
 ORDER BY `time` DESC
 LIMIT {$limi1},{$this->limi2}";
@@ -81,5 +89,4 @@ LIMIT 1";
         }
         die("alert('try later')");
     }
-
 }
