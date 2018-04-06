@@ -14,10 +14,17 @@ class PagesInclud
     const MYPAGE = [
         'redact' => 'redact',
         'blog' => 'blog',
+        'add' => 'add',
     ];
+
+    const SHOWPAGE = [
+        'add' => 'add',
+    ];
+
     const MYLOGIN = [
         'login' => 'login',
         'exit' => 'exit',
+        'blog' => 'blog',
     ];
 
     private function __construct()
@@ -37,19 +44,9 @@ class PagesInclud
                 if (!array_key_exists(self::$page, self::MYLOGIN)) {
                     self::$page = $this->main;;
                     return;
-
                 }
             }
-        } /*elseif (!empty($_REQUEST['id'])) {
-            self::$id = intval(trim(filter_var($_REQUEST['id'], FILTER_VALIDATE_INT)));
-            if (self::$id > 0) {
-                self::$page = 'blog';
-            } else {
-                self::$id = 0;
-                self::$page = $this->main;
-            }
-        }*/
-        else {
+        } else {
             self::$page = $this->main;
         }
     }

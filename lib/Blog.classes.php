@@ -37,4 +37,36 @@ LIMIT {$limi1},{$this->limi2}";
         return $stmt->fetchAll($this->pdo::FETCH_ASSOC);
     }
 
+    public function oneRecord(int $blog_id = 0)
+    {
+        $blog_id = intval($blog_id);
+        $blog_id = $this->pdo->quote($blog_id);
+        $sql = "SELECT blog.id,`id_user`, `title`,text, `time`, `img`, name FROM `user_blog` as blog
+JOIN `user` as user ON user.id=blog.id_user WHERE blog.id={$blog_id}
+LIMIT 1";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetch($this->pdo::FETCH_ASSOC);
+    }
+
+    public function deleteRecord(int $blog_id = 0)
+    {
+        $id_user = intval($_SESSION['id_user']);
+        $id_user = $this->pdo->quote($id_user);
+        $blog_id = intval($blog_id);
+        $blog_id = $this->pdo->quote($blog_id);
+        $sql = "SELECT `id` FROM `user_blog` WHERE `id`={$blog_id} AND `id_user`={$id_user} LIMIT 1";
+        $stmt = $this->pdo->query($sql);
+        $user = $stmt->fetch($this->pdo::FETCH_ASSOC);
+        if ((intval($user['id']) > 0) || $_SESSION['status'] === 'writer') {
+            $sql = "DELETE FROM `user_blog` WHERE `id`={$blog_id}";
+            $result = $this->pdo->exec($sql);
+            if ($result) {
+                die('window.location.href = "/"');
+            } else {
+                die("alert('try later')");
+            }
+        }
+        die("alert('try later')");
+    }
+
 }

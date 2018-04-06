@@ -22,7 +22,7 @@ if ($main === 'getRecord') {
 
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <p>' . $key['text'] . '...</p>
-                <a href="/?page=redact&id=' . $key['id'] . '" class="btn btn-primary">Read More →</a>
+                <a href="/?page=blog&id=' . $key['id'] . '" class="btn btn-primary">Read More →</a>
                 <p>Posted on ' . $key['time'] . ' by <b>' . $key['name'] . '</b></p>
             </div>
         </div>';

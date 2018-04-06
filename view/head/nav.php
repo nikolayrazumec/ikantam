@@ -13,11 +13,16 @@
                             </li>
 
                             <?php
+                            /**
+                            uncomment
+                            if you need pagination*/
+
                             if (!empty($_SESSION["user_name"])) {
-                                foreach ($cPagesInclud::MYPAGE as $key => $value) {
+                                foreach ($cPagesInclud::SHOWPAGE as $key => $value) {
                                     echo '<li class="' . ($cPagesInclud::$page == $key ? "active" : "") . '"><a href="?page=' . $key . '">' . $value . '</a></li>';
                                 }
-                            } ?>
+                            }
+                            ?>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
