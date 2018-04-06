@@ -7,15 +7,28 @@ include_once 'MyDb.classes.php';
 
 class Blog
 {
-    private $pdo;
-    private $max;
-    private $limi2 = 4;
+    protected $pdo;
+    //private $max;
+    protected $limi2 = 4;
 
     public function __construct()
     {
         $this->pdo = MyDb::MyPdo();
+        //$this->max = $this->getMax();
+    }
 
-        $this->max = $this->getMax();
+
+    public function setInsert(int $id_user, string $title, string $text, string $img)
+    {
+        $stmt = $this->pdo->prepare('INSERT INTO `user_blog`(`id_user`, `title`, `text`, `time`, `img`) VALUES (?,?,?,NOW(),?)');
+        return $stmt->execute([$id_user, $title, $text, $img]);
+    }
+
+    public function maxId()
+    {
+        $stmt = $this->pdo->query('SELECT MAX(`id`) as `MAX` FROM `user_blog`');
+        $id = $stmt->fetch($this->pdo::FETCH_ASSOC);
+        return intval($id['MAX']);
     }
 
     public function getMax()

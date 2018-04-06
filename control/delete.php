@@ -1,6 +1,7 @@
 <?php
 define('_CONTROL', 1);
 session_start();
+include_once "exist.php";
 include_once "../lib/Blog.classes.php";
 
 use MyClasses\Blog as Blog;
