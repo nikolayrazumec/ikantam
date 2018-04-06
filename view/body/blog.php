@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Razumec
- * Date: 03.04.2018
- * Time: 21:34
- */
+defined('_CONTROL') or die;
+include_once "/control/exist.php";
 var_dump('bloghead.php');
+?>

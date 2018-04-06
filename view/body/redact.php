@@ -1,6 +1,5 @@
-<?php defined('_CONTROL') or die;
-//include_once 'lib/Status.classes.php';
-//use MyClasses\Status as Status;
-//$status = Status::getInstance();
-var_dump('redacthead.php')
+<?php
+defined('_CONTROL') or die;
+include_once "/control/exist.php";
+var_dump('redacthead.php');
 ?>
