@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99e432c-b90b-4e0d-b1b0-54b56cf600e4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/js/add.js" afterPath="$PROJECT_DIR$/assets/js/add.js" />
-      <change beforePath="$PROJECT_DIR$/lib/Add.classes.php" afterPath="$PROJECT_DIR$/lib/Add.classes.php" />
-      <change beforePath="$PROJECT_DIR$/lib/Blog.classes.php" afterPath="$PROJECT_DIR$/lib/Blog.classes.php" />
-      <change beforePath="$PROJECT_DIR$/model/add.php" afterPath="$PROJECT_DIR$/model/add.php" />
-      <change beforePath="$PROJECT_DIR$/model/blog.php" afterPath="$PROJECT_DIR$/model/blog.php" />
-      <change beforePath="$PROJECT_DIR$/model/main.php" afterPath="$PROJECT_DIR$/model/main.php" />
-      <change beforePath="$PROJECT_DIR$/view/body/add.php" afterPath="$PROJECT_DIR$/view/body/add.php" />
-      <change beforePath="$PROJECT_DIR$/view/body/blog.php" afterPath="$PROJECT_DIR$/view/body/blog.php" />
-      <change beforePath="$PROJECT_DIR$/view/body/exit.php" afterPath="$PROJECT_DIR$/view/body/exit.php" />
-      <change beforePath="$PROJECT_DIR$/view/body/login.php" afterPath="$PROJECT_DIR$/view/body/login.php" />
-      <change beforePath="$PROJECT_DIR$/view/body/main.php" afterPath="$PROJECT_DIR$/view/body/main.php" />
-      <change beforePath="$PROJECT_DIR$/view/body/redact.php" afterPath="$PROJECT_DIR$/view/body/redact.php" />
-      <change beforePath="$PROJECT_DIR$/view/head/head.php" afterPath="$PROJECT_DIR$/view/head/head.php" />
-    </list>
+    <list default="true" id="d99e432c-b90b-4e0d-b1b0-54b56cf600e4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -226,12 +211,12 @@
       <updated>1522768585260</updated>
       <workItem from="1522768586432" duration="601000" />
       <workItem from="1522776514892" duration="40363000" />
-      <workItem from="1522925994796" duration="75275000" />
+      <workItem from="1522925994796" duration="75642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116239000" />
+    <option name="totallyTimeSpent" value="116606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
