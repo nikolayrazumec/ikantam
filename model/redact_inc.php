@@ -15,11 +15,7 @@ $id = intval($id);
 $blogClass = new Blog();
 
 $one_record = $blogClass->oneRecord($id);
-if (intval($_SESSION['id_user']) !== intval($one_record['id_user'])) {
-    header('Location: /');
-    die('<script>window.location.href = "/"</script>');
-}
-if ((intval($_SESSION['id_user']) === intval($one_record['id_user'])) || $_SESSION['status'] === 'writer') {
+if (((intval($_SESSION['id_user']) === intval($one_record['id_user'])) || $_SESSION['status'] === 'writer') && !empty($one_record['id'])) {
     $_SESSION['redact'] = intval($one_record['id']);
     ?>
     <form class="form-horizontal" enctype="multipart/form-data" method="post" name="fileinfo">
@@ -49,5 +45,9 @@ if ((intval($_SESSION['id_user']) === intval($one_record['id_user'])) || $_SESSI
     </div>
 
     <?php
+} else {
+    header('Location: /');
+    die('<script>window.location.href = "/"</script>');
+
 }
 ?>
